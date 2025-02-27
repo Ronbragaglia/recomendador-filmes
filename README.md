@@ -2,6 +2,12 @@
 
 🔹 Um sistema de recomendação de filmes utilizando FastAPI e hospedado no Render.
 
+## 🚀 Teste a API no Google Colab
+
+Clique no botão abaixo para abrir o notebook no Google Colab e testar a API:
+
+[![Abrir no Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Ronbragaglia/recomendador-filmes/blob/main/recomendador_filmes.ipynb)
+
 🚀 Como Testar a API?
 Você pode testar a API diretamente no Python, Postman ou via cURL.
 ![image](https://github.com/user-attachments/assets/65bacf11-f06b-4f73-9d4d-71bfeb856d92)
