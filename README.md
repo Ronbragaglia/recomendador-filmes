@@ -4,7 +4,7 @@
 
 🚀 Como Testar a API?
 Você pode testar a API diretamente no Python, Postman ou via cURL.
-
+![image](https://github.com/user-attachments/assets/65bacf11-f06b-4f73-9d4d-71bfeb856d92)
 ![image](https://github.com/user-attachments/assets/5566a4ae-3ffb-47a8-803c-af978fccae82)
 ![image](https://github.com/user-attachments/assets/ca27cf14-dbcd-445a-bc0f-2239a503aa7a)
 ![image](https://github.com/user-attachments/assets/ab72efae-a4a5-4137-9705-c326940a25fb)
