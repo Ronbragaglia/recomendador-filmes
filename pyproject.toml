@@ -1,0 +1,194 @@
+[tool.poetry]
+name = "recomendador-filmes"
+version = "1.0.0"
+description = "Sistema de recomendação de filmes utilizando FastAPI e Machine Learning"
+authors = ["Rone Bragaglia <ronbragaglia@example.com>"]
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/Ronbragaglia/recomendador-filmes"
+keywords = ["fastapi", "machine-learning", "recomendacao", "filmes", "python", "api"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Framework :: FastAPI",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.104.0"
+uvicorn = {extras = ["standard"], version = "^0.27.0"}
+pydantic = "^2.5.0"
+python-multipart = "^0.0.6"
+scikit-learn = "^1.4.0"
+numpy = "^1.26.0"
+pandas = "^2.1.0"
+scipy = "^1.11.0"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-dotenv = "^1.0.0"
+aiofiles = "^23.2.1"
+sqlalchemy = "^2.0.25"
+alembic = "^1.12.1"
+httpx = "^0.25.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-asyncio = "^0.21.0"
+pytest-cov = "^4.1.0"
+httpx = "^0.25.0"
+black = "^23.12.0"
+isort = "^5.13.0"
+flake8 = "^7.0.0"
+mypy = "^1.8.0"
+pre-commit = "^3.6.0"
+
+[tool.poetry.scripts]
+app = "uvicorn recomendador_filmes.app:app --host 0.0.0.0 --port 8000 --reload"
+dev = "uvicorn recomendador_filmes.app:app --host 0.0.0.0 --port 8000 --reload"
+test = "pytest"
+test-cov = "pytest --cov=recomendador_filmes --cov-report=html"
+lint = "flake8 recomendador_filmes"
+format = "black recomendador_filmes"
+type-check = "mypy recomendador_filmes"
+isort-check = "isort --check-only recomendador_filmes"
+isort-fix = "isort recomendador_filmes"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 100
+known_first_party = ["fastapi", "pydantic"]
+known_third_party = ["numpy", "pandas", "scikit-learn"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_ignores = true
+ignore_missing_imports = true
+check_untyped_defs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+disallow_untyped_calls = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = false
+warn_return_any = true
+strict_equality = false
+strict_optional = true
+show_error_codes = true
+show_error_context = true
+show_column_numbers = true
+show_error_code_links = true
+pretty = true
+color_output = true
+error_summary = true
+show_absolute_path = true
+plugins = ["pydantic.typing"]
+
+[[tool.mypy.overrides]]
+module = "uvicorn.*"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+python_classes = ["Test*"]
+markers = [
+    "unit: mark test as unit test",
+    "integration: mark test as integration test",
+    "slow: mark test as slow running",
+    "ml: mark test as machine learning test",
+]
+
+[tool.coverage.run]
+source = ["recomendador_filmes"]
+omit = [
+    "tests/*",
+    "*/tests/*",
+    "*/__pycache__/*",
+    "*/site-packages/*",
+]
+branch = true
+parallel = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "@abstractmethod",
+]
+precision = 2
+show_missing = true
+skip_covered = false
+
+[tool.flake8]
+max-line-length = 100
+max-complexity = 10
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".venv",
+    "venv",
+]
+ignore = [
+    "E203",  # whitespace before punctuation
+    "W503",  # line break before binary operator
+]
+per-file-ignores = [
+    "E501",  # line too long (handled by black)
+]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+]
+
+[tool.bandit]
+exclude_dirs = [
+    ".git",
+    "__pycache__",
+    ".venv",
+    "venv",
+    "tests",
+]
+skips = [
+    "B101",  # assert_used
+]

@@ -1,0 +1,257 @@
+# ==========================================
+# DEPENDÊNCIAS E MÓDULOS
+# ==========================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+ENV/
+env/
+.venv/
+
+# Poetry
+.poetry/
+.pytest_cache/
+
+# ==========================================
+# BANCO DE DADOS
+# ==========================================
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-shm
+*.db-wal
+
+# PostgreSQL
+*.dump
+*.sql
+
+# ==========================================
+# LOGS
+# ==========================================
+
+logs/
+*.log
+*.log.*
+
+# ==========================================
+# AMBIENTE E CONFIGURAÇÃO
+# ==========================================
+
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+.env.development
+
+# Configurações
+config.json
+settings.json
+secrets.json
+credentials.json
+
+# ==========================================
+# IDE E EDITOR
+# ==========================================
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+.idea_modules/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+
+# ==========================================
+# SISTEMA OPERACIONAL
+# ==========================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+desktop.ini
+
+# Linux
+*~
+.fuse_hidden*
+
+# ==========================================
+# MODELOS E DADOS
+# ==========================================
+
+# Modelos treinados
+models/
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+*.pb
+*.onnx
+*.pt
+*.pth
+
+# Datasets
+data/
+datasets/
+sample_data/*.csv
+sample_data/*.json
+
+# ==========================================
+# TESTES
+# ==========================================
+
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# ==========================================
+# DEPLOY
+# ==========================================
+
+# Render
+.render.yaml
+.renderignore
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose.override.yml
+
+# ==========================================
+# DOCUMENTAÇÃO
+# ==========================================
+
+docs/_build/
+docs/.doctrees/
+site/
+
+# ==========================================
+# TEMPORÁRIOS
+# ==========================================
+
+tmp/
+temp/
+tmp.*
+temp.*
+
+# ==========================================
+# BACKUP
+# ==========================================
+
+*.bak
+*.backup
+*~
+*.old
+
+# ==========================================
+# SEGURANÇA
+# ==========================================
+
+# Chaves e credenciais
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+credentials/
+*.secret
+
+# Tokens
+*.token
+auth_tokens.json
+refresh_tokens.json
+
+# ==========================================
+# OUTROS
+# ==========================================
+
+# Arquivos grandes
+*.large
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Node modules (se houver frontend)
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# ==========================================
+# MANTER NO REPOSITÓRIO
+# ==========================================
+
+# Manter arquivos de configuração do VS Code
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Manter README
+README.md
+LICENSE
+CHANGELOG.md
+CONTRIBUTING.md
